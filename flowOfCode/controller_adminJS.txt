@@ -1,0 +1,24 @@
+adminJS is a controller. A controller acts as the interface between the components
+the Views and Module to process application logic and handle incoming requests.
+Mannipulating data and rendering appropriate views
+
+in this controller module several functions are exported that are then used by routes/admin.js
+to handle incoming requests.
+
+getAddProduct Function:- res.render is used to render the appropriate view
+The arguments passed here are:
+1. 'admin/edit-product': the view that is to be rendered when res.render is called by this function.
+2. 'pageTitle, path, editing' =: the second argument that res.render takes is data in form of key value pairs that is to be passed in the view that is supposed to be rendered.
+editing: false here is passed as query parameter in URL indicating that editing logic isn't desired.\
+
+getEditProduct Function: const edit = req.query.edit extracts the value of the query named 'edit' from the request URL
+
+if editing isn't true in the request URL then a following code is executed{
+    res.redirect to  redirect the user too '/' default route thus preventing him from accessing the editing window
+
+}
+
+productID = req.params.productID is a parameter of URL by the name productID that contains the ID of the product to be edited
+
+then the id is used to call finByID function of Product module that finds and returns the product whose id matches the query ID passed into this method,
+if a product is not returned i.e. product=false i.e. the product was not found in the file then, user is directed to the home/defualt route
