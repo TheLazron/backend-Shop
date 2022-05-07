@@ -1,0 +1,21 @@
+View Engine: Engines that help in creating dynamic templates and layouts that are served over the internet instead of static html pages. Provide the feature of serving multiple webpages with help of only single template/reusable code.Eg. EJS, Pug, HandleBars.
+
+AdminRoutes and ShopRoutes are two routes files that are supposed to handle the routes that are categorized within them.
+
+
+Main Point:- App.js
+Requiring Path Module: 
+
+Path Module: module for building standard paths for reaching a particular file/directory
+We use its join method to join various elements and create a path that is accessible irrespective of the OS
+
+Express.static to declare a file as static that usually contains our css/js/images/content for the website that is served 
+statically i.e. making it available as a file in the server by providing a static path of the directory mentioned
+
+App.use('/admin') handles the requests that come via routes starting with /admin any requests mentinoned here will automatically get pre-concatinated with /admin.
+
+shopRoutes is supposed to handle routes mentioned under the shop route controller
+
+Any routes that arent handled by the controllers above are directed to errorController.get404 i.e. we havent specified ways to handle those routes.
+
+Server is the set to spin up at port 3000

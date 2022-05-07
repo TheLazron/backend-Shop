@@ -1,0 +1,19 @@
+routes/adminJS is supposed to hanndle request pre-concatenated with 'adminJS'
+These routes are supposed to indicate that the request is coming from admin dashboard
+
+Path and Express modules are required
+
+Here we also apply usage of router module provided by express.
+
+The Expressrouter object is a collection of middlewares and routes. It a mini-app within the main app.
+
+It itself is a middleware and hence can be used with app.use()
+
+router.get => to handle get request pre-concatenated with '/admin' and
+eg. /admin/add-product
+
+Each request here is handled and then passed to the admin Controller that has
+middlewares to handle these requests.
+adminController custom module is required for that purpose
+
+Atlast the moudule is exported to be used by app.js
